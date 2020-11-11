@@ -42,8 +42,9 @@ public class LoadTest extends HapiApiSuite {
 	public static OptionalDouble targetTPS = OptionalDouble.empty();
 	public static OptionalInt testDurationMinutes = OptionalInt.empty();
 	public static OptionalInt threadNumber = OptionalInt.empty();
-	/** initial balance of payer account used for paying for performance test transactions*/
-	public static OptionalLong initialBalance = OptionalLong.of(500_000_000_000L);
+	public static OptionalInt hcsSubmitMessage = OptionalInt.empty();
+	/** initial balance of payer account used for paying for performance test transactions */
+	public static OptionalLong initialBalance = OptionalLong.of(100_000_000L);
 
 	public static int parseArgs(String... args) {
 		int usedArgs = 0;

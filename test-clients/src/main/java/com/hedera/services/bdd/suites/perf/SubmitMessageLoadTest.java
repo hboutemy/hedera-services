@@ -55,7 +55,7 @@ public class SubmitMessageLoadTest extends LoadTest {
 
 	private static final org.apache.logging.log4j.Logger log = LogManager.getLogger(SubmitMessageLoadTest.class);
 	private static String topicID = null;
-	private static int messageSize = 40;
+	private static int messageSize = 256;
 	private static String pemFile = null;
 	public static void main(String... args) {
 		int usedArgs = parseArgs(args);
@@ -130,12 +130,12 @@ public class SubmitMessageLoadTest extends LoadTest {
 								sleepFor(100),
 						logIt(ignore -> settings.toString())
 				).when(
-						cryptoCreate("sender").balance(initialBalance.getAsLong())
+						cryptoCreate("sender").balance(Long.valueOf(500000000L))
 								.withRecharging()
-								.rechargeWindow(30)
+								.rechargeWindow(30).payingWith(GENESIS)
 								.hasRetryPrecheckFrom(BUSY, DUPLICATE_TRANSACTION, PLATFORM_TRANSACTION_NOT_CREATED),
 						topicID == null ? createTopic("topic")
-								.submitKeyName("submitKey")
+								.submitKeyName("submitKey").payingWith(GENESIS)
 								.hasRetryPrecheckFrom(BUSY, DUPLICATE_TRANSACTION, PLATFORM_TRANSACTION_NOT_CREATED):
 								sleepFor(100),
 						sleepFor(5000) //wait all other thread ready

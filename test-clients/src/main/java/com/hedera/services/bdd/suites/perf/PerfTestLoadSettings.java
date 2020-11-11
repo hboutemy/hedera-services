@@ -24,12 +24,13 @@ import com.google.common.base.MoreObjects;
 import com.hedera.services.bdd.spec.HapiPropertySource;
 
 public class PerfTestLoadSettings {
-	public static final int DEFAULT_TPS = 500;
+	public static final int DEFAULT_TPS = 2;
 	public static final int DEFAULT_TOLERANCE_PERCENTAGE = 5;
-	public static final int DEFAULT_MINS = 5;
+	public static final int DEFAULT_MINS = 1;
 	public static final int DEFAULT_ALLOWED_SECS_BELOW = 60;
-	public static final int DEFAULT_BURST_SIZE = 5;
-	public static final int DEFAULT_THREADS = 50;
+	public static final int DEFAULT_BURST_SIZE = 1;
+	public static final int DEFAULT_THREADS = 1;
+	public static final int DEFAULT_SUBMIT_MESSAGE_SIZE = 256;
 
 	private int tps = DEFAULT_TPS;
 	private int tolerancePercentage = DEFAULT_TOLERANCE_PERCENTAGE;

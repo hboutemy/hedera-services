@@ -55,15 +55,15 @@ public class SubmitMessageSuite extends HapiApiSuite {
 	@Override
 	protected List<HapiApiSpec> getSpecsInSuite() {
 		return List.of(
-				topicIdIsValidated(),
-				messageIsValidated(),
-				messageSubmissionSimple(),
-				messageSubmissionIncreasesSeqNo(),
-				messageSubmissionWithSubmitKey(),
-				messageSubmissionMultiple(),
-				messageSubmissionOverSize(),
-				feeAsExpected(),
-				messageSubmissionCorrectlyUpdatesRunningHash()
+				topicIdIsValidated()
+//				messageIsValidated()
+//				messageSubmissionSimple()
+//				messageSubmissionIncreasesSeqNo(),
+//				messageSubmissionWithSubmitKey(),
+//				messageSubmissionMultiple(),
+//				messageSubmissionOverSize(),
+//				feeAsExpected()
+//				messageSubmissionCorrectlyUpdatesRunningHash()
 		);
 	}
 
